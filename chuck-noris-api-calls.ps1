@@ -15,4 +15,4 @@ Write-Output $punchline
 # $response = Invoke-RestMethod -Uri 'https://api.chucknorris.io/jokes/g5WRr5V_T--bxb9XpqLsaA' -Method GET -Headers $headers
 # $response | Select-Object -Property Value
 
-Send-MailMessage -From 'hall.nathan@principal.com' -To 'hall.nathan@principal.com' -Subject 'Chuck Norris Joke' -Body $punchline -SmtpServer "smtp.principal.com"
+Send-MailMessage -From 'hall.nathan@principal.com' -To 'hall.nathan@principal.com' -Subject 'Daily Chuck Norris Joke' -Body $punchline -SmtpServer "smtp.principal.com"
