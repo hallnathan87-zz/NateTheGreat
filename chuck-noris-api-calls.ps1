@@ -4,7 +4,7 @@ $headers.Add("x-rapidapi-key", "f2665afcc6mshab0576163e00de5p150675jsnc2b2eb1582
 $headers.Add("accept", "application/json")
 $response = Invoke-RestMethod -Uri 'https://matchilling-chuck-norris-jokes-v1.p.rapidapi.com/jokes/random' -Method GET -Headers $headers
 $response | Select-Object -Property Value | Out-String
-$punchline = $response.Value
+$punchline = "Enjoy Today's Chuck Norris Joke: `n`n" + $response.Value
 
 Write-Output $punchline
 
@@ -15,5 +15,4 @@ Write-Output $punchline
 # $response = Invoke-RestMethod -Uri 'https://api.chucknorris.io/jokes/g5WRr5V_T--bxb9XpqLsaA' -Method GET -Headers $headers
 # $response | Select-Object -Property Value
 
-Send-MailMessage -From 'hall.nathan@principal.com' -To 'goldenglobes10@gmail.com' -Subject 'Chuck Norris Joke' -Body "Enjoy Today's Chuck Norris Joke: $punchline" -SmtpServer "smtp.principal.com"
-
+Send-MailMessage -From 'hall.nathan@principal.com' -To 'goldenglobes10@gmail.com' -Subject 'Chuck Norris Joke' -Body $punchline -SmtpServer "smtp.principal.com"
